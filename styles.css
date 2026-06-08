@@ -398,21 +398,19 @@ p {
 }
 
 .clinic-card.video-featured {
-  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
 }
 
 .clinic-photo,
-.clinic-video {
+.clinic-video-preview {
   position: relative;
   min-height: 260px;
 }
 
-.clinic-video {
-  display: grid;
+.clinic-video-preview {
   width: 100%;
-  height: clamp(360px, 36vw, 520px);
+  aspect-ratio: 4 / 3;
   min-height: 0;
-  place-items: center;
   background: #111;
 }
 
@@ -445,7 +443,7 @@ p {
   line-height: 1;
 }
 
-.clinic-video .video-count-badge span {
+.clinic-video-preview .video-count-badge span {
   position: static;
   padding: 0;
   border-radius: 0;
@@ -456,20 +454,14 @@ p {
 }
 
 .clinic-photo img,
-.clinic-video video {
+.clinic-video-preview img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.clinic-video video {
-  display: block;
-  object-fit: contain;
-  background: #111;
-}
-
 .clinic-photo span,
-.clinic-video span {
+.clinic-video-preview > span {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -481,8 +473,37 @@ p {
   font-weight: 900;
 }
 
-.clinic-video span {
+.clinic-video-preview > span {
   background: rgba(242, 111, 47, 0.94);
+}
+
+.clinic-video-preview::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.36));
+  content: "";
+}
+
+.video-open-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(36, 36, 36, 0.88);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
 .clinic-body {
@@ -526,7 +547,7 @@ p {
 
 .job-highlight-grid {
   display: grid;
-  grid-template-columns: minmax(180px, 1.35fr) repeat(3, minmax(118px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   margin-bottom: 12px;
 }
@@ -572,6 +593,7 @@ p {
   margin-top: 3px;
   font-size: 0.72rem;
   line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .salary-row {
@@ -767,6 +789,92 @@ p {
   padding: 0 16px;
 }
 
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.video-modal.is-open {
+  display: flex;
+}
+
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.video-modal-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(960px, 100%);
+  max-height: min(86vh, 860px);
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.38);
+}
+
+.video-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  color: #fff;
+  background: #242424;
+}
+
+.video-modal-head span,
+.video-modal-head strong {
+  display: block;
+  line-height: 1.3;
+}
+
+.video-modal-head span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.video-modal-head button {
+  min-width: 72px;
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.video-modal-player {
+  display: grid;
+  width: 100%;
+  height: min(76vh, 760px);
+  place-items: center;
+  background: #050505;
+}
+
+.video-modal-player video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #050505;
+}
+
+body.video-modal-open {
+  overflow: hidden;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -878,18 +986,13 @@ p {
   }
 
   .clinic-photo,
-  .clinic-video {
+  .clinic-video-preview {
     min-height: 0;
     aspect-ratio: 1.52;
   }
 
   .clinic-card.video-featured {
     grid-template-columns: 1fr;
-  }
-
-  .clinic-video {
-    height: min(560px, 72vh);
-    aspect-ratio: 9 / 16;
   }
 
   .clinic-body {
@@ -908,5 +1011,17 @@ p {
 
   .clinic-cta a {
     width: 100%;
+  }
+
+  .video-modal {
+    padding: 10px;
+  }
+
+  .video-modal-panel {
+    max-height: 90vh;
+  }
+
+  .video-modal-player {
+    height: 78vh;
   }
 }

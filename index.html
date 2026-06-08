@@ -127,20 +127,24 @@
           </div>
 
           <article class="clinic-card video-featured">
-            <div class="clinic-video">
+            <div class="clinic-video-preview">
+              <img
+                src="./assets/japanese-dh-clinic.png"
+                alt="岡山なかの歯科クリニックの求人動画サムネイル"
+              />
+              <button
+                class="video-open-button"
+                type="button"
+                data-video="./assets/clinic-recruit-video.mp4"
+                data-title="医院紹介"
+              >
+                <span class="play-dot" aria-hidden="true"></span>
+                動画を見る
+              </button>
               <div class="video-count-badge">
                 <strong>3</strong>
                 <span>本の求人動画</span>
               </div>
-              <video
-                id="nakanoRecruitVideo"
-                src="./assets/clinic-recruit-video.mp4"
-                controls
-                muted
-                playsinline
-                preload="metadata"
-                poster="./assets/japanese-dh-clinic.png"
-              ></video>
               <span>求人動画あり</span>
             </div>
             <div class="clinic-body">
@@ -190,7 +194,7 @@
                     class="is-active"
                     type="button"
                     data-video="./assets/clinic-recruit-video.mp4"
-                    aria-controls="nakanoRecruitVideo"
+                    data-title="医院紹介"
                   >
                     <span class="play-dot" aria-hidden="true"></span>
                     <span>01</span>
@@ -199,7 +203,7 @@
                   <button
                     type="button"
                     data-video="./assets/nakano-recruit-video-2.mp4"
-                    aria-controls="nakanoRecruitVideo"
+                    data-title="スタッフ紹介"
                   >
                     <span class="play-dot" aria-hidden="true"></span>
                     <span>02</span>
@@ -208,7 +212,7 @@
                   <button
                     type="button"
                     data-video="./assets/nakano-recruit-video-3.mp4"
-                    aria-controls="nakanoRecruitVideo"
+                    data-title="診療風景"
                   >
                     <span class="play-dot" aria-hidden="true"></span>
                     <span>03</span>
@@ -345,6 +349,22 @@
       <strong>AtoE career</strong>
       <span>© 2026 AtoE career.</span>
     </footer>
+
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+      <div class="video-modal-backdrop" data-close-video></div>
+      <div class="video-modal-panel" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+        <div class="video-modal-head">
+          <div>
+            <span>岡山なかの歯科クリニック</span>
+            <strong id="videoModalTitle">医院紹介</strong>
+          </div>
+          <button type="button" data-close-video aria-label="動画を閉じる">閉じる</button>
+        </div>
+        <div class="video-modal-player">
+          <video id="modalRecruitVideo" controls playsinline preload="metadata"></video>
+        </div>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
