@@ -198,6 +198,44 @@ img {
   margin-top: 34px;
 }
 
+.hero-guide {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  width: min(520px, 100%);
+  margin-top: 26px;
+  padding: 12px 16px 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+}
+
+.hero-guide img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.hero-guide strong,
+.hero-guide span {
+  display: block;
+}
+
+.hero-guide strong {
+  font-size: 0.9rem;
+}
+
+.hero-guide span {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .primary-button {
   min-width: 156px;
   padding: 0 24px;
@@ -342,10 +380,85 @@ img {
 .featured-section,
 .worries-section,
 .position-section,
-.scholarship-section {
+.scholarship-section,
+.visual-story-section,
+.blog-section {
   width: min(1120px, calc(100% - 48px));
   margin: 0 auto;
   padding: 46px 0 72px;
+}
+
+.visual-story-section {
+  padding-top: 72px;
+}
+
+.visual-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 18px;
+}
+
+.story-card {
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(30, 50, 55, 0.08);
+}
+
+.story-card img {
+  width: 100%;
+  aspect-ratio: 1.45;
+  object-fit: cover;
+}
+
+.story-card div {
+  padding: 20px;
+}
+
+.story-card span,
+.blog-card span {
+  color: var(--coral);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.story-card h3,
+.blog-card h3 {
+  margin: 8px 0;
+  font-size: 1.22rem;
+  line-height: 1.35;
+}
+
+.story-card p,
+.blog-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.story-large {
+  grid-row: span 2;
+}
+
+.story-large img {
+  aspect-ratio: 1.18;
+}
+
+.mascot-story {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  align-items: center;
+}
+
+.mascot-story img {
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  object-fit: contain;
+  padding: 18px;
+  background: linear-gradient(135deg, #f4fbfa, #fff7f3);
 }
 
 .position-section {
@@ -676,6 +789,35 @@ img {
   color: var(--muted);
 }
 
+.blog-section {
+  padding-top: 72px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.blog-card {
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(30, 50, 55, 0.08);
+}
+
+.blog-card img {
+  width: 100%;
+  aspect-ratio: 1.45;
+  object-fit: cover;
+}
+
+.blog-card div {
+  padding: 20px;
+}
+
 .clinic-section {
   display: flex;
   align-items: center;
@@ -721,9 +863,23 @@ img {
   .job-grid,
   .academy-section,
   .worry-grid,
+  .blog-grid,
   .position-section,
   .scholarship-flow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .visual-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-large {
+    grid-row: auto;
+  }
+
+  .story-large img,
+  .story-card img {
+    aspect-ratio: 1.7;
   }
 
   .academy-section {
@@ -796,8 +952,27 @@ img {
     padding: 14px 0;
   }
 
+  .hero-guide {
+    grid-template-columns: 72px minmax(0, 1fr);
+    padding: 10px;
+  }
+
+  .hero-guide img {
+    width: 72px;
+    height: 72px;
+  }
+
   .search-band {
     padding-inline: 16px;
+  }
+
+  .search-form,
+  .job-grid,
+  .academy-section,
+  .worry-grid,
+  .blog-grid,
+  .position-section {
+    grid-template-columns: 1fr;
   }
 
   .search-panel {
@@ -823,8 +998,30 @@ img {
 
   .featured-section,
   .worries-section,
-  .scholarship-section {
+  .scholarship-section,
+  .visual-story-section,
+  .blog-section {
     width: min(100% - 32px, 1120px);
+  }
+
+  .visual-story-section,
+  .blog-section {
+    padding-top: 48px;
+  }
+
+  .mascot-story {
+    grid-template-columns: 1fr;
+  }
+
+  .mascot-story img {
+    min-height: 180px;
+    max-height: 240px;
+  }
+
+  .story-card img,
+  .story-large img,
+  .blog-card img {
+    aspect-ratio: 1.5;
   }
 
   .academy-section,
