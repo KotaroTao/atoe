@@ -98,7 +98,7 @@ p {
 .brand strong,
 .brand small {
   display: block;
-  line-height: 1.2;
+  line-height: 1.32;
 }
 
 .brand small {
@@ -106,16 +106,59 @@ p {
   font-size: 0.78rem;
 }
 
-.nav-links {
+.header-actions {
   display: flex;
   align-items: center;
-  gap: 22px;
-  color: #34444c;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.member-register,
+.member-login,
+.recruiter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 8px;
+  padding: 0 16px;
   font-weight: 800;
+  line-height: 1;
+  text-align: center;
   white-space: nowrap;
 }
 
-.header-cta,
+.member-register {
+  border: 0;
+  color: #fff;
+  background: var(--mint-deep);
+  box-shadow: 0 12px 22px rgba(0, 118, 103, 0.18);
+}
+
+.member-login {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: #fff;
+}
+
+.recruiter-link {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  color: #fff;
+  background: #242424;
+  box-shadow: 0 12px 24px rgba(36, 36, 36, 0.18);
+}
+
+.recruiter-link::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--atoe-red);
+}
+
 .search-row button,
 .clinic-head button,
 .primary-action,
@@ -130,16 +173,11 @@ p {
   font-weight: 900;
 }
 
-.header-cta,
 .search-row button,
 .primary-action {
   border: 0;
   color: #fff;
   background: var(--mint-deep);
-}
-
-.header-cta {
-  padding: 0 16px;
 }
 
 .list-hero {
@@ -986,10 +1024,6 @@ body.video-modal-open {
 }
 
 @media (max-width: 1080px) {
-  .nav-links {
-    display: none;
-  }
-
   .search-shell {
     position: static;
   }
@@ -1030,15 +1064,35 @@ body.video-modal-open {
   .site-header {
     min-height: 64px;
     padding: 10px 12px;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .brand {
     min-width: 0;
   }
 
-  .brand small,
-  .header-cta {
+  .brand small {
     display: none;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .member-register,
+  .member-login,
+  .recruiter-link {
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 0.86rem;
+  }
+
+  .recruiter-link {
+    grid-column: 1 / -1;
   }
 
   .brand-mark {
