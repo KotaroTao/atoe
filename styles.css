@@ -120,7 +120,6 @@ p {
 .clinic-head button,
 .primary-action,
 .secondary-action,
-.instagram-action,
 .clinic-cta a,
 .filter-block button {
   display: inline-flex;
@@ -725,39 +724,20 @@ p {
 
 .card-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.08fr 1fr;
   gap: 10px;
 }
 
 .primary-action,
-.secondary-action,
-.instagram-action {
-  min-height: 44px;
+.secondary-action {
+  min-height: 50px;
+  font-size: 1rem;
 }
 
 .secondary-action {
-  border: 1px solid var(--line);
-  color: var(--ink);
+  border: 2px solid var(--mint-deep);
+  color: var(--mint-deep);
   background: #fff;
-}
-
-.instagram-action {
-  border: 0;
-  color: #fff;
-  background:
-    radial-gradient(circle at 30% 105%, #feda75 0 18%, transparent 34%),
-    linear-gradient(135deg, #833ab4, #fd1d1d 52%, #fcb045);
-}
-
-.instagram-action svg {
-  width: 19px;
-  height: 19px;
-  margin-right: 6px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .compact-card {
