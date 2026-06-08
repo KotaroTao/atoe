@@ -915,7 +915,7 @@ p {
 
 .column-card a {
   display: grid;
-  grid-template-rows: 220px 1fr;
+  grid-template-rows: 190px 1fr;
   height: 100%;
   color: inherit;
 }
@@ -939,7 +939,7 @@ p {
 
 .column-card img {
   width: 100%;
-  height: 220px;
+  height: 190px;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -960,22 +960,22 @@ p {
 
 .column-card:nth-child(3) img {
   object-fit: contain;
-  padding: 22px;
+  padding: 18px;
 }
 
 .column-card-body {
   display: grid;
-  grid-template-rows: 30px minmax(4.65em, auto) minmax(4.8em, auto) auto;
+  grid-template-rows: 28px minmax(4.25em, auto) minmax(4.1em, auto) auto;
   align-content: stretch;
-  gap: 13px;
-  padding: 22px;
+  gap: 10px;
+  padding: 18px;
 }
 
 .column-card span {
   display: inline-flex;
   align-items: center;
   justify-self: start;
-  min-height: 30px;
+  min-height: 28px;
   padding: 0 11px;
   border-radius: 999px;
   color: #b23a10;
@@ -987,18 +987,18 @@ p {
 
 .column-card h3 {
   margin-bottom: 0;
-  color: #19262d;
-  font-size: 1.12rem;
-  line-height: 1.44;
+  color: #c63a17;
+  font-size: 1.06rem;
+  line-height: 1.42;
   text-wrap: pretty;
 }
 
 .column-card p {
   margin-bottom: 0;
-  color: #4f626c;
-  font-size: 0.92rem;
+  color: #54666f;
+  font-size: 0.88rem;
   font-weight: 800;
-  line-height: 1.7;
+  line-height: 1.62;
   text-wrap: pretty;
 }
 
@@ -1006,8 +1006,8 @@ p {
   display: inline-flex;
   align-items: center;
   justify-self: start;
-  min-height: 34px;
-  padding: 0 12px;
+  min-height: 32px;
+  padding: 0 11px;
   border-radius: 999px;
   align-self: end;
   color: #fff;
