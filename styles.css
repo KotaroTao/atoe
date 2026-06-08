@@ -895,6 +895,7 @@ p {
 
 .column-card a {
   display: grid;
+  grid-template-rows: 180px 1fr;
   height: 100%;
   color: inherit;
 }
@@ -943,7 +944,9 @@ p {
 
 .column-card-body {
   display: grid;
-  align-content: start;
+  grid-template-rows: 28px minmax(4.65em, auto) minmax(4.6em, auto) auto;
+  align-content: stretch;
+  gap: 12px;
   padding: 18px;
 }
 
@@ -952,7 +955,6 @@ p {
   align-items: center;
   justify-self: start;
   min-height: 28px;
-  margin-bottom: 12px;
   padding: 0 9px;
   border-radius: 999px;
   color: #9a451b;
@@ -962,14 +964,14 @@ p {
 }
 
 .column-card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 0;
   font-size: 1.05rem;
   line-height: 1.48;
   text-wrap: pretty;
 }
 
 .column-card p {
-  margin-bottom: 14px;
+  margin-bottom: 0;
   color: #54666f;
   font-size: 0.9rem;
   font-weight: 800;
