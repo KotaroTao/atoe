@@ -121,7 +121,6 @@ p {
 .primary-action,
 .secondary-action,
 .instagram-action,
-.academy-strip a,
 .clinic-cta a,
 .filter-block button {
   display: inline-flex;
@@ -204,7 +203,6 @@ p {
 
 .search-shell,
 .content-shell,
-.academy-strip,
 .clinic-cta {
   width: min(1220px, calc(100% - 36px));
   margin: 0 auto;
@@ -385,6 +383,7 @@ p {
 .clinic-card {
   display: grid;
   grid-template-columns: 244px minmax(0, 1fr);
+  align-items: start;
   overflow: hidden;
   margin-bottom: 14px;
   border: 1px solid var(--line);
@@ -410,7 +409,9 @@ p {
 
 .clinic-video {
   display: grid;
-  min-height: 360px;
+  width: 100%;
+  height: clamp(360px, 36vw, 520px);
+  min-height: 0;
   place-items: center;
   background: #111;
 }
@@ -591,34 +592,6 @@ p {
   color: #69502a;
 }
 
-.clinic-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.clinic-metrics div {
-  min-width: 0;
-  padding: 10px;
-  border: 1px solid #f0dfc8;
-  border-radius: 8px;
-  background: var(--soft);
-}
-
-.clinic-metrics dt {
-  color: var(--muted);
-  font-size: 0.74rem;
-  font-weight: 900;
-}
-
-.clinic-metrics dd {
-  margin: 2px 0 0;
-  color: var(--mint-deep);
-  font-weight: 900;
-  line-height: 1.25;
-}
-
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -769,7 +742,6 @@ p {
   grid-template-columns: 1fr;
 }
 
-.academy-strip,
 .clinic-cta {
   display: flex;
   align-items: center;
@@ -780,29 +752,9 @@ p {
   border-radius: 8px;
 }
 
-.academy-strip {
-  color: #fff;
-  background: #242424;
-}
-
-.academy-strip p {
-  margin-bottom: 4px;
-  color: #f5ad22;
-  font-size: 0.82rem;
-  font-weight: 900;
-}
-
-.academy-strip h2,
 .clinic-cta h2 {
   margin-bottom: 0;
   font-size: 1.35rem;
-}
-
-.academy-strip a {
-  min-width: 170px;
-  padding: 0 16px;
-  color: var(--ink);
-  background: #fff;
 }
 
 .clinic-cta {
@@ -899,7 +851,6 @@ p {
 
   .search-shell,
   .content-shell,
-  .academy-strip,
   .clinic-cta {
     width: min(100% - 24px, 1220px);
   }
@@ -907,7 +858,6 @@ p {
   .search-row,
   .filter-sidebar,
   .clinic-card,
-  .clinic-metrics,
   .job-highlight-grid,
   .video-gallery,
   .card-actions {
@@ -938,6 +888,7 @@ p {
   }
 
   .clinic-video {
+    height: min(560px, 72vh);
     aspect-ratio: 9 / 16;
   }
 
@@ -949,14 +900,12 @@ p {
     font-size: 1.22rem;
   }
 
-  .academy-strip,
   .clinic-cta,
   .site-footer {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .academy-strip a,
   .clinic-cta a {
     width: 100%;
   }
