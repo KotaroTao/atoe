@@ -34,7 +34,7 @@
         <div>
           <p class="breadcrumb">歯科衛生士求人 / 新卒・第二新卒</p>
           <h1>新卒歯科衛生士の求人一覧</h1>
-          <p class="lead">教育体制・給与・見学可否・奨学金対応をまとめて比較。</p>
+          <p class="lead">日本の歯科医院を、求人動画・教育体制・給与・見学可否で比較。</p>
         </div>
         <div class="hero-count">
           <strong>124</strong>
@@ -46,7 +46,7 @@
         <div class="search-row">
           <label>
             キーワード
-            <input type="search" value="新卒 歯科衛生士" />
+            <input type="search" value="新卒 歯科衛生士 求人動画" />
           </label>
           <label>
             エリア
@@ -70,6 +70,7 @@
         </div>
         <div class="quick-filters" aria-label="人気条件">
           <a href="#">新人研修あり</a>
+          <a class="is-active" href="#">求人動画あり</a>
           <a href="#">見学だけOK</a>
           <a href="#">奨学金制度あり</a>
           <a href="#">週休2.5日以上</a>
@@ -108,6 +109,7 @@
             <h3>連携制度</h3>
             <label><input type="checkbox" /> 奨学金制度あり</label>
             <label><input type="checkbox" /> 見学受付中</label>
+            <label><input type="checkbox" checked /> 求人動画あり</label>
             <label><input type="checkbox" /> 学校説明会対応</label>
           </div>
         </aside>
@@ -115,10 +117,11 @@
         <div class="results">
           <div class="result-toolbar">
             <div>
-              <p class="result-meta">東京都・新卒歓迎</p>
+              <p class="result-meta">求人動画ありを優先表示</p>
               <h2>124件中 1〜4件</h2>
             </div>
             <select aria-label="並び替え">
+              <option>動画あり優先</option>
               <option>おすすめ順</option>
               <option>給与が高い順</option>
               <option>見学しやすい順</option>
@@ -126,23 +129,27 @@
             </select>
           </div>
 
-          <article class="clinic-card featured">
-            <div class="clinic-photo">
-              <img
-                src="https://images.pexels.com/photos/3884125/pexels-photo-3884125.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="タブレットを持つ歯科医療スタッフ"
-              />
-              <span>見学受付中</span>
+          <article class="clinic-card video-featured">
+            <div class="clinic-video">
+              <video
+                src="./assets/clinic-recruit-video.mp4"
+                controls
+                muted
+                playsinline
+                preload="metadata"
+                poster="./assets/japanese-dh-clinic.png"
+              ></video>
+              <span>求人動画あり</span>
             </div>
             <div class="clinic-body">
               <div class="clinic-head">
                 <div>
                   <p class="area">東京都 渋谷区 / 渋谷駅 徒歩4分</p>
-                  <h3>AO Dental Studio</h3>
+                  <h3>青山予防歯科クリニック</h3>
                 </div>
-                <button type="button" aria-label="AO Dental Studioを保存">保存</button>
+                <button type="button" aria-label="青山予防歯科クリニックを保存">保存</button>
               </div>
-              <p class="catch">新人メンター制度と90日オンボーディングで、最初の担当患者まで伴走。</p>
+              <p class="catch">院内の雰囲気を動画で確認。新人メンター制度と90日オンボーディングあり。</p>
               <div class="salary-row">
                 <strong>月給 28.5万円〜</strong>
                 <span>賞与年2回</span>
@@ -155,6 +162,7 @@
               </dl>
               <div class="tag-list">
                 <span>新卒歓迎</span>
+                <span>求人動画</span>
                 <span>SRP研修</span>
                 <span>AtoE academy</span>
                 <span>奨学金相談</span>
@@ -169,18 +177,18 @@
           <article class="clinic-card">
             <div class="clinic-photo">
               <img
-                src="https://images.pexels.com/photos/3845759/pexels-photo-3845759.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="歯科医院で鏡を見る女性"
+                src="./assets/japanese-dh-clinic.png"
+                alt="日本人歯科衛生士スタッフがいる歯科医院"
               />
               <span>第二新卒歓迎</span>
             </div>
             <div class="clinic-body">
               <div class="clinic-head">
                 <div>
-                  <p class="area">大阪府 大阪市 / 梅田駅 徒歩6分</p>
-                  <h3>Mellow Oral Care</h3>
+                  <p class="area">大阪府 大阪市北区 / 梅田駅 徒歩6分</p>
+                  <h3>梅田みらい歯科</h3>
                 </div>
-                <button type="button" aria-label="Mellow Oral Careを保存">保存</button>
+                <button type="button" aria-label="梅田みらい歯科を保存">保存</button>
               </div>
               <p class="catch">予防中心のアポイント設計。審美・ホワイトニングも段階的に学べる医院。</p>
               <div class="salary-row">
@@ -209,18 +217,18 @@
           <article class="clinic-card">
             <div class="clinic-photo">
               <img
-                src="https://images.pexels.com/photos/3884111/pexels-photo-3884111.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="モダンな歯科診療室"
+                src="./assets/japanese-dh-clinic.png"
+                alt="日本人歯科衛生士が働く明るい歯科医院"
               />
               <span>奨学金対応</span>
             </div>
             <div class="clinic-body">
               <div class="clinic-head">
                 <div>
-                  <p class="area">福岡県 福岡市 / 天神駅 徒歩3分</p>
-                  <h3>Lumiere Dental</h3>
+                  <p class="area">福岡県 福岡市中央区 / 天神駅 徒歩3分</p>
+                  <h3>天神ルミエール歯科</h3>
                 </div>
-                <button type="button" aria-label="Lumiere Dentalを保存">保存</button>
+                <button type="button" aria-label="天神ルミエール歯科を保存">保存</button>
               </div>
               <p class="catch">奨学金制度、院内マニュアル、定着面談つき。小児矯正も基礎から学べます。</p>
               <div class="salary-row">
@@ -250,10 +258,10 @@
             <div class="clinic-body">
               <div class="clinic-head">
                 <div>
-                  <p class="area">愛知県 名古屋市 / 栄駅 徒歩5分</p>
-                  <h3>Haru Preventive Dental</h3>
+                  <p class="area">愛知県 名古屋市中区 / 栄駅 徒歩5分</p>
+                  <h3>栄はる予防歯科</h3>
                 </div>
-                <button type="button" aria-label="Haru Preventive Dentalを保存">保存</button>
+                <button type="button" aria-label="栄はる予防歯科を保存">保存</button>
               </div>
               <p class="catch">担当制メンテナンス、週休3日相談可。AtoE academy受講生の見学歓迎。</p>
               <div class="salary-row">
