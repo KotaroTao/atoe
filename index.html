@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AtoE career | 新卒歯科衛生士の求人サイト</title>
+    <title>AtoE career | 新卒歯科衛生士の求人一覧</title>
     <meta
       name="description"
-      content="AtoE careerは、新卒・第二新卒・若手歯科衛生士向けの求人サイトです。教育体制、医院見学、奨学金制度、AtoE academy連携で、自分に合う歯科医院を探せます。"
+      content="AtoE careerは、新卒・第二新卒・若手歯科衛生士向けの求人一覧サイトです。教育体制、見学可否、奨学金制度、AtoE academy連携で歯科医院を比較できます。"
     />
     <link rel="preconnect" href="https://images.pexels.com" />
     <link rel="stylesheet" href="./styles.css" />
@@ -17,234 +17,274 @@
         <span class="brand-mark">A</span>
         <span>
           <strong>AtoE career</strong>
-          <small>新卒歯科衛生士の求人</small>
+          <small>新卒DH求人</small>
         </span>
       </a>
       <nav class="nav-links" aria-label="メインナビゲーション">
-        <a href="#jobs">求人</a>
-        <a href="#areas">エリア</a>
-        <a href="#conditions">条件</a>
-        <a href="#academy">academy</a>
+        <a href="#jobs">求人一覧</a>
+        <a href="#filters">条件検索</a>
+        <a href="#academy">academy連携</a>
         <a href="#clinics">医院掲載</a>
       </nav>
-      <a class="header-cta" href="#jobs">求人を探す</a>
+      <a class="header-cta" href="#jobs">求人を見る</a>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">New grad dental hygienist jobs</p>
-            <h1>新卒歯科衛生士の求人を探す</h1>
-            <p>教育体制・見学しやすさ・奨学金制度で、最初の医院を比べられます。</p>
-          </div>
-
-          <form class="search-card" aria-label="求人検索">
-            <label>
-              エリア
-              <select>
-                <option>東京都</option>
-                <option>神奈川県</option>
-                <option>大阪府</option>
-                <option>福岡県</option>
-                <option>全国</option>
-              </select>
-            </label>
-            <label>
-              キャリア
-              <select>
-                <option>2027年卒・新卒</option>
-                <option>第二新卒</option>
-                <option>1〜3年目</option>
-              </select>
-            </label>
-            <label>
-              こだわり
-              <select>
-                <option>新人研修あり</option>
-                <option>見学だけOK</option>
-                <option>奨学金制度あり</option>
-                <option>AtoE academy連携</option>
-              </select>
-            </label>
-            <button type="button">検索する</button>
-          </form>
-
-          <div class="hero-summary" aria-label="求人概要">
-            <div><strong>124</strong><span>掲載医院</span></div>
-            <div><strong>38</strong><span>見学受付中</span></div>
-            <div><strong>22</strong><span>奨学金対応</span></div>
-          </div>
+      <section class="list-hero">
+        <div>
+          <p class="breadcrumb">歯科衛生士求人 / 新卒・第二新卒</p>
+          <h1>新卒歯科衛生士の求人一覧</h1>
+          <p class="lead">教育体制・給与・見学可否・奨学金対応をまとめて比較。</p>
+        </div>
+        <div class="hero-count">
+          <strong>124</strong>
+          <span>件掲載中</span>
         </div>
       </section>
 
-      <section class="area-section" id="areas">
-        <div class="section-title compact">
-          <h2>エリアから探す</h2>
-          <a href="#jobs">すべて見る</a>
+      <section class="search-shell" id="filters" aria-label="求人検索">
+        <div class="search-row">
+          <label>
+            キーワード
+            <input type="search" value="新卒 歯科衛生士" />
+          </label>
+          <label>
+            エリア
+            <select>
+              <option>東京都</option>
+              <option>神奈川県</option>
+              <option>大阪府</option>
+              <option>福岡県</option>
+              <option>全国</option>
+            </select>
+          </label>
+          <label>
+            給与
+            <select>
+              <option>月給26万円以上</option>
+              <option>月給28万円以上</option>
+              <option>月給30万円以上</option>
+            </select>
+          </label>
+          <button type="button">検索</button>
         </div>
-        <div class="area-grid">
-          <a href="#">東京都 <span>42件</span></a>
-          <a href="#">神奈川県 <span>21件</span></a>
-          <a href="#">大阪府 <span>18件</span></a>
-          <a href="#">福岡県 <span>12件</span></a>
-          <a href="#">愛知県 <span>9件</span></a>
-          <a href="#">全国オンライン見学 <span>14件</span></a>
+        <div class="quick-filters" aria-label="人気条件">
+          <a href="#">新人研修あり</a>
+          <a href="#">見学だけOK</a>
+          <a href="#">奨学金制度あり</a>
+          <a href="#">週休2.5日以上</a>
+          <a href="#">18時台退勤</a>
+          <a href="#">AtoE academy連携</a>
         </div>
       </section>
 
-      <section class="jobs-section" id="jobs">
-        <div class="section-title">
-          <div>
-            <p class="eyebrow">Featured clinics</p>
-            <h2>教育体制で選べる歯科医院</h2>
+      <section class="content-shell" id="jobs">
+        <aside class="filter-sidebar" aria-label="絞り込み条件">
+          <div class="filter-block">
+            <h2>絞り込み</h2>
+            <button type="button">条件をリセット</button>
           </div>
-          <p>124件中 1〜6件を表示</p>
-        </div>
+          <div class="filter-block">
+            <h3>キャリア</h3>
+            <label><input type="checkbox" checked /> 2027年卒・新卒</label>
+            <label><input type="checkbox" /> 第二新卒</label>
+            <label><input type="checkbox" /> 1〜3年目</label>
+          </div>
+          <div class="filter-block">
+            <h3>教育・研修</h3>
+            <label><input type="checkbox" checked /> 新人研修あり</label>
+            <label><input type="checkbox" checked /> 先輩DHメンター</label>
+            <label><input type="checkbox" /> SRP研修</label>
+            <label><input type="checkbox" /> academy連携</label>
+          </div>
+          <div class="filter-block">
+            <h3>働き方</h3>
+            <label><input type="checkbox" /> 週休2.5日以上</label>
+            <label><input type="checkbox" /> 18時台退勤</label>
+            <label><input type="checkbox" /> 残業ほぼなし</label>
+            <label><input type="checkbox" /> 駅徒歩5分以内</label>
+          </div>
+          <div class="filter-block">
+            <h3>連携制度</h3>
+            <label><input type="checkbox" /> 奨学金制度あり</label>
+            <label><input type="checkbox" /> 見学受付中</label>
+            <label><input type="checkbox" /> 学校説明会対応</label>
+          </div>
+        </aside>
 
-        <div class="job-layout">
-          <aside class="filter-panel" id="conditions" aria-label="求人条件">
+        <div class="results">
+          <div class="result-toolbar">
             <div>
-              <h3>人気条件</h3>
-              <a href="#">新卒歓迎</a>
-              <a href="#">新人研修あり</a>
-              <a href="#">見学だけOK</a>
-              <a href="#">週休2.5日以上</a>
-              <a href="#">18時台退勤</a>
-              <a href="#">奨学金制度あり</a>
-              <a href="#">AtoE academy連携</a>
+              <p class="result-meta">東京都・新卒歓迎</p>
+              <h2>124件中 1〜4件</h2>
             </div>
-            <div>
-              <h3>学べる領域</h3>
-              <a href="#">予防歯科</a>
-              <a href="#">歯周治療・SRP</a>
-              <a href="#">ホワイトニング</a>
-              <a href="#">小児・矯正</a>
-            </div>
-          </aside>
+            <select aria-label="並び替え">
+              <option>おすすめ順</option>
+              <option>給与が高い順</option>
+              <option>見学しやすい順</option>
+              <option>教育スコア順</option>
+            </select>
+          </div>
 
-          <div class="job-list">
-            <article class="job-card">
+          <article class="clinic-card featured">
+            <div class="clinic-photo">
               <img
                 src="https://images.pexels.com/photos/3884125/pexels-photo-3884125.jpeg?auto=compress&cs=tinysrgb&w=900"
                 alt="タブレットを持つ歯科医療スタッフ"
               />
-              <div class="job-main">
-                <div class="job-head">
-                  <div>
-                    <p class="location">東京都 渋谷区 / 渋谷駅 徒歩4分</p>
-                    <h3>AO Dental Studio</h3>
-                  </div>
-                  <button type="button" aria-label="求人を保存">保存</button>
+              <span>見学受付中</span>
+            </div>
+            <div class="clinic-body">
+              <div class="clinic-head">
+                <div>
+                  <p class="area">東京都 渋谷区 / 渋谷駅 徒歩4分</p>
+                  <h3>AO Dental Studio</h3>
                 </div>
-                <p class="salary">月給 28.5万円〜 / 賞与年2回</p>
-                <p class="job-desc">新人メンター制度、90日オンボーディング、AtoE academy連動研修あり。</p>
-                <div class="job-tags">
-                  <span>新卒歓迎</span>
-                  <span>見学OK</span>
-                  <span>SRP研修</span>
-                  <span>奨学金相談</span>
-                </div>
-                <div class="job-score">
-                  <span>教育 5.0</span>
-                  <span>見学 受付中</span>
-                  <span>先輩DH 8名</span>
-                </div>
+                <button type="button" aria-label="AO Dental Studioを保存">保存</button>
               </div>
-            </article>
+              <p class="catch">新人メンター制度と90日オンボーディングで、最初の担当患者まで伴走。</p>
+              <div class="salary-row">
+                <strong>月給 28.5万円〜</strong>
+                <span>賞与年2回</span>
+                <span>週休2.5日</span>
+              </div>
+              <dl class="clinic-metrics">
+                <div><dt>教育</dt><dd>5.0</dd></div>
+                <div><dt>先輩DH</dt><dd>8名</dd></div>
+                <div><dt>見学</dt><dd>当日相談可</dd></div>
+              </dl>
+              <div class="tag-list">
+                <span>新卒歓迎</span>
+                <span>SRP研修</span>
+                <span>AtoE academy</span>
+                <span>奨学金相談</span>
+              </div>
+              <div class="card-actions">
+                <a class="primary-action" href="#">見学を予約</a>
+                <a class="secondary-action" href="#">求人詳細</a>
+              </div>
+            </div>
+          </article>
 
-            <article class="job-card">
+          <article class="clinic-card">
+            <div class="clinic-photo">
               <img
                 src="https://images.pexels.com/photos/3845759/pexels-photo-3845759.jpeg?auto=compress&cs=tinysrgb&w=900"
                 alt="歯科医院で鏡を見る女性"
               />
-              <div class="job-main">
-                <div class="job-head">
-                  <div>
-                    <p class="location">大阪府 大阪市 / 梅田駅 徒歩6分</p>
-                    <h3>Mellow Oral Care</h3>
-                  </div>
-                  <button type="button" aria-label="求人を保存">保存</button>
+              <span>第二新卒歓迎</span>
+            </div>
+            <div class="clinic-body">
+              <div class="clinic-head">
+                <div>
+                  <p class="area">大阪府 大阪市 / 梅田駅 徒歩6分</p>
+                  <h3>Mellow Oral Care</h3>
                 </div>
-                <p class="salary">月給 27万円〜 / 週休2.5日</p>
-                <p class="job-desc">予防中心のアポイント設計。第二新卒の学び直しも歓迎。</p>
-                <div class="job-tags">
-                  <span>第二新卒</span>
-                  <span>予防中心</span>
-                  <span>審美</span>
-                  <span>18時台退勤</span>
-                </div>
-                <div class="job-score">
-                  <span>教育 4.8</span>
-                  <span>見学 受付中</span>
-                  <span>メンテ60分</span>
-                </div>
+                <button type="button" aria-label="Mellow Oral Careを保存">保存</button>
               </div>
-            </article>
+              <p class="catch">予防中心のアポイント設計。審美・ホワイトニングも段階的に学べる医院。</p>
+              <div class="salary-row">
+                <strong>月給 27万円〜</strong>
+                <span>18時台退勤</span>
+                <span>住宅手当</span>
+              </div>
+              <dl class="clinic-metrics">
+                <div><dt>教育</dt><dd>4.8</dd></div>
+                <div><dt>メンテ</dt><dd>60分</dd></div>
+                <div><dt>見学</dt><dd>土曜可</dd></div>
+              </dl>
+              <div class="tag-list">
+                <span>予防中心</span>
+                <span>審美</span>
+                <span>第二新卒</span>
+                <span>駅近</span>
+              </div>
+              <div class="card-actions">
+                <a class="primary-action" href="#">見学を予約</a>
+                <a class="secondary-action" href="#">求人詳細</a>
+              </div>
+            </div>
+          </article>
 
-            <article class="job-card">
+          <article class="clinic-card">
+            <div class="clinic-photo">
               <img
                 src="https://images.pexels.com/photos/3884111/pexels-photo-3884111.jpeg?auto=compress&cs=tinysrgb&w=900"
                 alt="モダンな歯科診療室"
               />
-              <div class="job-main">
-                <div class="job-head">
-                  <div>
-                    <p class="location">福岡県 福岡市 / 天神駅 徒歩3分</p>
-                    <h3>Lumiere Dental</h3>
-                  </div>
-                  <button type="button" aria-label="求人を保存">保存</button>
+              <span>奨学金対応</span>
+            </div>
+            <div class="clinic-body">
+              <div class="clinic-head">
+                <div>
+                  <p class="area">福岡県 福岡市 / 天神駅 徒歩3分</p>
+                  <h3>Lumiere Dental</h3>
                 </div>
-                <p class="salary">月給 26.5万円〜 / 住宅手当あり</p>
-                <p class="job-desc">院内マニュアル、相互練習日、定着面談つき。奨学金制度に対応。</p>
-                <div class="job-tags">
-                  <span>新卒歓迎</span>
-                  <span>奨学金</span>
-                  <span>定着面談</span>
-                  <span>小児矯正</span>
-                </div>
-                <div class="job-score">
-                  <span>教育 4.7</span>
-                  <span>見学 受付中</span>
-                  <span>DH専用枠</span>
-                </div>
+                <button type="button" aria-label="Lumiere Dentalを保存">保存</button>
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
+              <p class="catch">奨学金制度、院内マニュアル、定着面談つき。小児矯正も基礎から学べます。</p>
+              <div class="salary-row">
+                <strong>月給 26.5万円〜</strong>
+                <span>奨学金</span>
+                <span>DH専用枠</span>
+              </div>
+              <dl class="clinic-metrics">
+                <div><dt>教育</dt><dd>4.7</dd></div>
+                <div><dt>面談</dt><dd>月1回</dd></div>
+                <div><dt>見学</dt><dd>受付中</dd></div>
+              </dl>
+              <div class="tag-list">
+                <span>新卒歓迎</span>
+                <span>小児矯正</span>
+                <span>定着面談</span>
+                <span>奨学金制度</span>
+              </div>
+              <div class="card-actions">
+                <a class="primary-action" href="#">見学を予約</a>
+                <a class="secondary-action" href="#">求人詳細</a>
+              </div>
+            </div>
+          </article>
 
-      <section class="pickup-section">
-        <div class="section-title compact">
-          <h2>新卒DHに人気の条件</h2>
-          <a href="#conditions">条件を追加</a>
-        </div>
-        <div class="pickup-grid">
-          <a href="#">新人研修あり</a>
-          <a href="#">先輩DHメンター</a>
-          <a href="#">奨学金制度あり</a>
-          <a href="#">見学だけOK</a>
-          <a href="#">予防中心</a>
-          <a href="#">AtoE academy連携</a>
-          <a href="#">週休2.5日以上</a>
-          <a href="#">18時台退勤</a>
+          <article class="clinic-card compact-card">
+            <div class="clinic-body">
+              <div class="clinic-head">
+                <div>
+                  <p class="area">愛知県 名古屋市 / 栄駅 徒歩5分</p>
+                  <h3>Haru Preventive Dental</h3>
+                </div>
+                <button type="button" aria-label="Haru Preventive Dentalを保存">保存</button>
+              </div>
+              <p class="catch">担当制メンテナンス、週休3日相談可。AtoE academy受講生の見学歓迎。</p>
+              <div class="salary-row">
+                <strong>月給 27.5万円〜</strong>
+                <span>週休3日相談</span>
+                <span>予防中心</span>
+              </div>
+              <div class="tag-list">
+                <span>担当制</span>
+                <span>academy連携</span>
+                <span>見学OK</span>
+              </div>
+              <div class="card-actions">
+                <a class="primary-action" href="#">見学を予約</a>
+                <a class="secondary-action" href="#">求人詳細</a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="academy-strip" id="academy">
         <div>
-          <p class="eyebrow">AtoE academy</p>
-          <h2>研修と求人を連動</h2>
+          <p>AtoE academy</p>
+          <h2>研修テーマに合う医院を探せる</h2>
         </div>
-        <p>academy受講テーマに合う医院、奨学金制度のある医院を探せます。</p>
         <a href="https://www.dh-shogakukin.com/" target="_blank" rel="noreferrer">奨学金制度を見る</a>
       </section>
 
       <section class="clinic-cta" id="clinics">
-        <div>
-          <p class="eyebrow">For clinics</p>
-          <h2>教育で選ばれる医院掲載</h2>
-        </div>
+        <h2>医院掲載・奨学金制度導入の相談</h2>
         <a href="mailto:info@example.com">掲載相談</a>
       </section>
     </main>
