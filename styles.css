@@ -847,7 +847,7 @@ p {
 
 .student-columns {
   margin-bottom: 22px;
-  padding: 24px 0 10px;
+  padding: 34px 0 18px;
 }
 
 .section-head {
@@ -855,47 +855,67 @@ p {
   align-items: end;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(230, 0, 0, 0.1);
 }
 
 .section-head p {
-  margin-bottom: 3px;
-  color: var(--coral);
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin-bottom: 6px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--coral);
   font-size: 0.78rem;
   font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .section-head h2 {
   margin-bottom: 0;
-  font-size: 1.42rem;
-  line-height: 1.35;
+  font-size: 1.58rem;
+  line-height: 1.32;
 }
 
 .column-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
 .column-card {
+  position: relative;
   min-width: 0;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(230, 0, 0, 0.12);
   border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 16px 38px rgba(29, 41, 48, 0.07);
+  background: linear-gradient(180deg, #ffffff 0%, #fffdfb 100%);
+  box-shadow: 0 18px 46px rgba(29, 41, 48, 0.1);
   overflow: hidden;
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
+.column-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  height: 4px;
+  background: linear-gradient(90deg, var(--atoe-red), var(--coral), #f7b15a);
+}
+
 .column-card:hover {
-  border-color: rgba(230, 0, 0, 0.18);
-  box-shadow: 0 20px 46px rgba(29, 41, 48, 0.1);
+  border-color: rgba(230, 0, 0, 0.24);
+  box-shadow: 0 26px 62px rgba(29, 41, 48, 0.15);
   transform: translateY(-2px);
 }
 
 .column-card a {
   display: grid;
-  grid-template-rows: 180px 1fr;
+  grid-template-rows: 220px 1fr;
   height: 100%;
   color: inherit;
 }
@@ -905,20 +925,21 @@ p {
   min-height: 0;
   margin: 0;
   overflow: hidden;
-  background: #fff7f2;
+  background: linear-gradient(135deg, #fff7f2, #fff);
 }
 
 .column-card figure::after {
   content: "";
   position: absolute;
-  inset: auto 0 0;
-  height: 46%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.18));
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 52%, rgba(255, 246, 240, 0.5)),
+    linear-gradient(90deg, rgba(230, 0, 0, 0.12), rgba(255, 255, 255, 0) 46%);
 }
 
 .column-card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -934,56 +955,72 @@ p {
 }
 
 .column-card:nth-child(3) figure {
-  background: linear-gradient(135deg, #fff6f0, #ffffff 56%, #ffe9de);
+  background: radial-gradient(circle at 50% 40%, #fff 0 36%, #fff3ec 37% 100%);
 }
 
 .column-card:nth-child(3) img {
   object-fit: contain;
-  padding: 18px;
+  padding: 22px;
 }
 
 .column-card-body {
   display: grid;
-  grid-template-rows: 28px minmax(4.65em, auto) minmax(4.6em, auto) auto;
+  grid-template-rows: 30px minmax(4.65em, auto) minmax(4.8em, auto) auto;
   align-content: stretch;
-  gap: 12px;
-  padding: 18px;
+  gap: 13px;
+  padding: 22px;
 }
 
 .column-card span {
   display: inline-flex;
   align-items: center;
   justify-self: start;
-  min-height: 28px;
-  padding: 0 9px;
+  min-height: 30px;
+  padding: 0 11px;
   border-radius: 999px;
-  color: #9a451b;
-  background: #fff1e7;
+  color: #b23a10;
+  background: linear-gradient(180deg, #fff5ec, #ffe9dc);
+  box-shadow: inset 0 0 0 1px rgba(242, 111, 47, 0.12);
   font-size: 0.74rem;
   font-weight: 900;
 }
 
 .column-card h3 {
   margin-bottom: 0;
-  font-size: 1.05rem;
-  line-height: 1.48;
+  color: #19262d;
+  font-size: 1.12rem;
+  line-height: 1.44;
   text-wrap: pretty;
 }
 
 .column-card p {
   margin-bottom: 0;
-  color: #54666f;
-  font-size: 0.9rem;
+  color: #4f626c;
+  font-size: 0.92rem;
   font-weight: 800;
   line-height: 1.7;
   text-wrap: pretty;
 }
 
 .column-card small {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
   align-self: end;
-  color: #b24a18;
+  color: #fff;
+  background: #242424;
+  box-shadow: 0 10px 20px rgba(36, 36, 36, 0.12);
   font-size: 0.78rem;
   font-weight: 900;
+}
+
+.column-card small::after {
+  content: "→";
+  margin-left: 8px;
+  color: #ffcfba;
 }
 
 .video-modal {
