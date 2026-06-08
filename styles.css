@@ -1,16 +1,16 @@
 :root {
-  --ink: #1d2930;
-  --muted: #66757d;
-  --line: #dfe8e6;
+  --ink: #242424;
+  --muted: #6f6a64;
+  --line: #eadfce;
   --paper: #ffffff;
-  --bg: #f6faf9;
-  --soft: #eef9f6;
-  --mint: #1aa896;
-  --mint-deep: #08796b;
-  --coral: #ff6f61;
-  --amber: #fff4df;
-  --blue: #edf5ff;
-  --shadow: 0 16px 42px rgba(29, 41, 48, 0.08);
+  --bg: #fffaf2;
+  --soft: #fff4df;
+  --mint: #f2a10f;
+  --mint-deep: #e88800;
+  --coral: #f26f2f;
+  --amber: #fff0c7;
+  --blue: #fff7e7;
+  --shadow: 0 16px 42px rgba(36, 36, 36, 0.08);
 }
 
 * {
@@ -90,7 +90,7 @@ p {
   place-items: center;
   border-radius: 8px;
   color: #fff;
-  background: linear-gradient(135deg, #51cbbb, #8588ff);
+  background: linear-gradient(135deg, #f5ad22, #f26f2f);
   font-size: 1.26rem;
   font-weight: 900;
 }
@@ -152,7 +152,7 @@ p {
   gap: 24px;
   padding: 28px max(18px, calc((100vw - 1220px) / 2)) 18px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(238, 249, 246, 0.94)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(255, 244, 223, 0.94)),
     url("https://images.pexels.com/photos/5355901/pexels-photo-5355901.jpeg?auto=compress&cs=tinysrgb&w=1600");
   background-position: center right;
   background-size: cover;
@@ -184,7 +184,7 @@ p {
   display: grid;
   min-width: 160px;
   padding: 16px 18px;
-  border: 1px solid rgba(26, 168, 150, 0.2);
+  border: 1px solid rgba(232, 136, 0, 0.24);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow);
@@ -280,9 +280,9 @@ p {
 }
 
 .quick-filters a.is-active {
-  border-color: rgba(255, 111, 97, 0.32);
-  color: #9f3f35;
-  background: #fff1ee;
+  border-color: rgba(242, 111, 47, 0.36);
+  color: #9a451b;
+  background: #fff1e7;
 }
 
 .content-shell {
@@ -306,7 +306,7 @@ p {
 
 .filter-block {
   padding: 16px;
-  border-bottom: 1px solid #edf3f2;
+  border-bottom: 1px solid #f2e4d1;
 }
 
 .filter-block:last-child {
@@ -394,13 +394,24 @@ p {
 
 .clinic-card.featured,
 .clinic-card.video-featured {
-  border-color: rgba(26, 168, 150, 0.35);
+  border-color: rgba(242, 161, 15, 0.5);
+}
+
+.clinic-card.video-featured {
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
 }
 
 .clinic-photo,
 .clinic-video {
   position: relative;
   min-height: 260px;
+}
+
+.clinic-video {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  background: #111;
 }
 
 .clinic-photo img,
@@ -412,7 +423,8 @@ p {
 
 .clinic-video video {
   display: block;
-  background: #0f2024;
+  object-fit: contain;
+  background: #111;
 }
 
 .clinic-photo span,
@@ -423,13 +435,13 @@ p {
   padding: 6px 10px;
   border-radius: 8px;
   color: #fff;
-  background: rgba(8, 121, 107, 0.92);
+  background: rgba(36, 36, 36, 0.9);
   font-size: 0.78rem;
   font-weight: 900;
 }
 
 .clinic-video span {
-  background: rgba(255, 111, 97, 0.94);
+  background: rgba(242, 111, 47, 0.94);
 }
 
 .clinic-body {
@@ -499,7 +511,7 @@ p {
 .clinic-metrics div {
   min-width: 0;
   padding: 10px;
-  border: 1px solid #dceceb;
+  border: 1px solid #f0dfc8;
   border-radius: 8px;
   background: var(--soft);
 }
@@ -526,7 +538,7 @@ p {
 
 .tag-list span {
   background: var(--blue);
-  color: #364f73;
+  color: #6b4a19;
 }
 
 .card-actions {
@@ -563,12 +575,12 @@ p {
 
 .academy-strip {
   color: #fff;
-  background: #15343a;
+  background: #242424;
 }
 
 .academy-strip p {
   margin-bottom: 4px;
-  color: #77d9ca;
+  color: #f5ad22;
   font-size: 0.82rem;
   font-weight: 900;
 }
@@ -587,8 +599,8 @@ p {
 }
 
 .clinic-cta {
-  border: 1px solid rgba(26, 168, 150, 0.25);
-  background: linear-gradient(135deg, #fff8f1, #edf8f6);
+  border: 1px solid rgba(232, 136, 0, 0.28);
+  background: linear-gradient(135deg, #fff8f1, #fff0c7);
 }
 
 .clinic-cta a {
@@ -629,7 +641,7 @@ p {
   }
 
   .filter-block {
-    border-right: 1px solid #edf3f2;
+    border-right: 1px solid #f2e4d1;
   }
 
   .search-row {
@@ -706,6 +718,14 @@ p {
   .clinic-video {
     min-height: 0;
     aspect-ratio: 1.52;
+  }
+
+  .clinic-card.video-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .clinic-video {
+    aspect-ratio: 9 / 16;
   }
 
   .clinic-body {
