@@ -278,6 +278,7 @@ img {
 .section-header h2,
 .academy-copy h2,
 .worries-section h2,
+.scholarship-section h2,
 .clinic-section h2 {
   margin: 0;
   font-size: 2rem;
@@ -477,9 +478,9 @@ img {
 }
 
 .scholarship-lead {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
   gap: 28px;
   margin-bottom: 22px;
   padding: 24px;
@@ -490,6 +491,7 @@ img {
 
 .scholarship-lead p {
   max-width: 740px;
+  min-width: 0;
   margin: 0;
   color: var(--muted);
 }
@@ -501,6 +503,7 @@ img {
   min-width: 180px;
   min-height: 44px;
   padding: 0 18px;
+  white-space: nowrap;
   border-radius: 999px;
   color: #fff;
   background: var(--mint-dark);
@@ -514,7 +517,8 @@ img {
 }
 
 .scholarship-grid article {
-  min-height: 230px;
+  min-width: 0;
+  min-height: 208px;
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -534,6 +538,7 @@ img {
 }
 
 .scholarship-flow div {
+  min-width: 0;
   min-height: 118px;
   padding: 22px;
   background: #12262b;
@@ -555,6 +560,7 @@ img {
   margin-top: 8px;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .academy-section {
@@ -716,9 +722,8 @@ img {
   .academy-section,
   .worry-grid,
   .position-section,
-  .scholarship-grid,
   .scholarship-flow {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .academy-section {
@@ -730,7 +735,15 @@ img {
   }
 
   .scholarship-lead {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .scholarship-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scholarship-lead a {
+    width: fit-content;
   }
 }
 
@@ -809,12 +822,37 @@ img {
   }
 
   .featured-section,
-  .worries-section {
+  .worries-section,
+  .scholarship-section {
     width: min(100% - 32px, 1120px);
   }
 
   .academy-section,
   .clinic-section {
     padding: 52px 16px;
+  }
+
+  .scholarship-section {
+    padding-top: 48px;
+  }
+
+  .scholarship-lead,
+  .scholarship-grid article {
+    padding: 18px;
+  }
+
+  .scholarship-lead a {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .scholarship-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .scholarship-flow div {
+    min-height: auto;
+    padding: 18px;
   }
 }
