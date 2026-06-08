@@ -120,6 +120,7 @@ p {
 .clinic-head button,
 .primary-action,
 .secondary-action,
+.instagram-action,
 .academy-strip a,
 .clinic-cta a,
 .filter-block button {
@@ -541,14 +542,48 @@ p {
   color: #6b4a19;
 }
 
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.video-gallery a {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  min-height: 54px;
+  padding: 9px 10px;
+  border: 1px solid rgba(242, 111, 47, 0.28);
+  border-radius: 8px;
+  background: #fff8f1;
+}
+
+.video-gallery span {
+  color: var(--coral);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.video-gallery strong {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 0.86rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .card-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
 
 .primary-action,
-.secondary-action {
+.secondary-action,
+.instagram-action {
   min-height: 44px;
 }
 
@@ -556,6 +591,19 @@ p {
   border: 1px solid var(--line);
   color: var(--ink);
   background: #fff;
+}
+
+.instagram-action {
+  border: 1px solid rgba(242, 111, 47, 0.32);
+  color: #9a451b;
+  background: linear-gradient(135deg, #fff8f1, #fff1e7);
+}
+
+.instagram-action span {
+  margin-right: 6px;
+  color: var(--coral);
+  font-size: 1.05rem;
+  line-height: 1;
 }
 
 .compact-card {
@@ -697,6 +745,7 @@ p {
   .filter-sidebar,
   .clinic-card,
   .clinic-metrics,
+  .video-gallery,
   .card-actions {
     grid-template-columns: 1fr;
   }
