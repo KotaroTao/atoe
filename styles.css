@@ -415,6 +415,45 @@ p {
   background: #111;
 }
 
+.video-count-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: calc(100% - 24px);
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(36, 36, 36, 0.86);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.video-count-badge strong {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--ink);
+  background: #fff;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.clinic-video .video-count-badge span {
+  position: static;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .clinic-photo img,
 .clinic-video video {
   width: 100%;
@@ -484,6 +523,56 @@ p {
   font-weight: 800;
 }
 
+.job-highlight-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.35fr) repeat(3, minmax(118px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.job-highlight-grid div {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #f0dfc8;
+  border-radius: 8px;
+  background: #fffaf2;
+}
+
+.job-highlight-grid .highlight-main {
+  border-color: rgba(242, 111, 47, 0.34);
+  background: linear-gradient(135deg, #fff8f1, #fff0c7);
+}
+
+.job-highlight-grid span,
+.job-highlight-grid small {
+  display: block;
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.job-highlight-grid span {
+  margin-bottom: 2px;
+  font-size: 0.72rem;
+}
+
+.job-highlight-grid strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.28;
+}
+
+.job-highlight-grid .highlight-main strong {
+  color: var(--coral);
+  font-size: 1.18rem;
+}
+
+.job-highlight-grid small {
+  margin-top: 3px;
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
 .salary-row {
   display: flex;
   flex-wrap: wrap;
@@ -542,28 +631,92 @@ p {
   color: #6b4a19;
 }
 
+.video-section {
+  margin-bottom: 14px;
+  padding: 10px;
+  border: 1px solid rgba(242, 111, 47, 0.22);
+  border-radius: 8px;
+  background: #fff8f1;
+}
+
+.video-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.video-section-head strong {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.video-section-head span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 9px;
+  border-radius: 999px;
+  color: #9a451b;
+  background: #fff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
 .video-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  margin-bottom: 14px;
 }
 
-.video-gallery a {
+.video-gallery button {
   display: grid;
-  gap: 2px;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
   min-width: 0;
-  min-height: 54px;
+  min-height: 48px;
   padding: 9px 10px;
   border: 1px solid rgba(242, 111, 47, 0.28);
   border-radius: 8px;
-  background: #fff8f1;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.video-gallery button.is-active {
+  border-color: var(--coral);
+  background: #fff1e7;
+  box-shadow: inset 0 0 0 1px rgba(242, 111, 47, 0.18);
 }
 
 .video-gallery span {
   color: var(--coral);
   font-size: 0.72rem;
   font-weight: 900;
+}
+
+.play-dot {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--coral);
+}
+
+.play-dot::before {
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #fff;
+  content: "";
 }
 
 .video-gallery strong {
@@ -594,16 +747,22 @@ p {
 }
 
 .instagram-action {
-  border: 1px solid rgba(242, 111, 47, 0.32);
-  color: #9a451b;
-  background: linear-gradient(135deg, #fff8f1, #fff1e7);
+  border: 0;
+  color: #fff;
+  background:
+    radial-gradient(circle at 30% 105%, #feda75 0 18%, transparent 34%),
+    linear-gradient(135deg, #833ab4, #fd1d1d 52%, #fcb045);
 }
 
-.instagram-action span {
+.instagram-action svg {
+  width: 19px;
+  height: 19px;
   margin-right: 6px;
-  color: var(--coral);
-  font-size: 1.05rem;
-  line-height: 1;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .compact-card {
@@ -695,6 +854,10 @@ p {
   .search-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .job-highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
@@ -745,6 +908,7 @@ p {
   .filter-sidebar,
   .clinic-card,
   .clinic-metrics,
+  .job-highlight-grid,
   .video-gallery,
   .card-actions {
     grid-template-columns: 1fr;

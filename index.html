@@ -131,7 +131,12 @@
 
           <article class="clinic-card video-featured">
             <div class="clinic-video">
+              <div class="video-count-badge">
+                <strong>3</strong>
+                <span>本の求人動画</span>
+              </div>
               <video
+                id="nakanoRecruitVideo"
                 src="./assets/clinic-recruit-video.mp4"
                 controls
                 muted
@@ -150,10 +155,27 @@
                 <button type="button" aria-label="岡山なかの歯科クリニックを保存">保存</button>
               </div>
               <p class="catch">求人インスタ動画で院内の雰囲気を確認。新人メンター制度と90日オンボーディングあり。</p>
-              <div class="salary-row">
-                <strong>月給 28.5万円〜</strong>
-                <span>賞与年2回</span>
-                <span>週休2.5日</span>
+              <div class="job-highlight-grid" aria-label="求人の主要条件">
+                <div class="highlight-main">
+                  <span>給与</span>
+                  <strong>月給28.5万円〜</strong>
+                  <small>賞与年2回</small>
+                </div>
+                <div>
+                  <span>休日</span>
+                  <strong>週休2.5日</strong>
+                  <small>日曜・祝日休み</small>
+                </div>
+                <div>
+                  <span>教育</span>
+                  <strong>90日研修</strong>
+                  <small>先輩DHメンター</small>
+                </div>
+                <div>
+                  <span>見学</span>
+                  <strong>当日相談可</strong>
+                  <small>求人動画で事前確認</small>
+                </div>
               </div>
               <dl class="clinic-metrics">
                 <div><dt>教育</dt><dd>5.0</dd></div>
@@ -167,19 +189,41 @@
                 <span>AtoE academy</span>
                 <span>奨学金相談</span>
               </div>
-              <div class="video-gallery" aria-label="求人動画一覧">
-                <a href="./assets/clinic-recruit-video.mp4">
-                  <span>動画 01</span>
-                  <strong>医院紹介</strong>
-                </a>
-                <a href="./assets/nakano-recruit-video-2.mp4">
-                  <span>動画 02</span>
-                  <strong>スタッフ紹介</strong>
-                </a>
-                <a href="./assets/nakano-recruit-video-3.mp4">
-                  <span>動画 03</span>
-                  <strong>診療風景</strong>
-                </a>
+              <div class="video-section" aria-label="求人動画一覧">
+                <div class="video-section-head">
+                  <strong>求人動画</strong>
+                  <span>3本公開中</span>
+                </div>
+                <div class="video-gallery">
+                  <button
+                    class="is-active"
+                    type="button"
+                    data-video="./assets/clinic-recruit-video.mp4"
+                    aria-controls="nakanoRecruitVideo"
+                  >
+                    <span class="play-dot" aria-hidden="true"></span>
+                    <span>01</span>
+                    <strong>医院紹介</strong>
+                  </button>
+                  <button
+                    type="button"
+                    data-video="./assets/nakano-recruit-video-2.mp4"
+                    aria-controls="nakanoRecruitVideo"
+                  >
+                    <span class="play-dot" aria-hidden="true"></span>
+                    <span>02</span>
+                    <strong>スタッフ紹介</strong>
+                  </button>
+                  <button
+                    type="button"
+                    data-video="./assets/nakano-recruit-video-3.mp4"
+                    aria-controls="nakanoRecruitVideo"
+                  >
+                    <span class="play-dot" aria-hidden="true"></span>
+                    <span>03</span>
+                    <strong>診療風景</strong>
+                  </button>
+                </div>
               </div>
               <div class="card-actions">
                 <a class="primary-action" href="#">見学を予約</a>
@@ -191,7 +235,11 @@
                   rel="noreferrer"
                   aria-label="岡山なかの歯科クリニックのInstagramを見る"
                 >
-                  <span aria-hidden="true">◎</span>
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.4" cy="6.6" r="1.1"></circle>
+                  </svg>
                   Instagram
                 </a>
               </div>
