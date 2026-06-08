@@ -181,22 +181,24 @@ p {
 
 .hero-count {
   display: grid;
-  min-width: 160px;
-  padding: 16px 18px;
-  border: 1px solid rgba(232, 136, 0, 0.24);
+  min-width: 220px;
+  max-width: 280px;
+  padding: 14px 16px;
+  border: 1px solid rgba(232, 0, 0, 0.18);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow);
 }
 
 .hero-count strong {
-  color: var(--coral);
-  font-size: 2rem;
-  line-height: 1;
+  color: #e90000;
+  font-size: 1.05rem;
+  line-height: 1.35;
 }
 
 .hero-count span {
   color: var(--muted);
+  font-size: 0.78rem;
   font-weight: 900;
 }
 
@@ -300,6 +302,49 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--paper);
+}
+
+.academy-banner {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  overflow: hidden;
+  padding: 18px 16px 20px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.2) 0 22%, transparent 23%),
+    linear-gradient(135deg, #f00000, #d40000 58%, #ff6b2f);
+}
+
+.academy-banner-kicker {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #e90000;
+  background: #fff;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.academy-banner strong,
+.academy-banner small {
+  position: relative;
+  z-index: 1;
+}
+
+.academy-banner strong {
+  font-size: 1.02rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.academy-banner small {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.5;
 }
 
 .filter-block {
@@ -896,6 +941,10 @@ body.video-modal-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .academy-banner {
+    grid-column: 1 / -1;
+  }
+
   .filter-block {
     border-right: 1px solid #f2e4d1;
   }
@@ -941,9 +990,15 @@ body.video-modal-open {
 
   .hero-count {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
+    gap: 12px;
     min-width: 0;
+    max-width: none;
+  }
+
+  .hero-count strong {
+    font-size: 0.95rem;
   }
 
   .search-shell,
